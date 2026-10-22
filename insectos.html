@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles de insectos - Pequeños refugios para grandes aliados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            sage: '#89A894',
+                            sageSoft: '#EBF1ED',
+                            yellow: '#F6D55C',
+                            yellowSoft: '#FEF9E7',
+                            beige: '#F4F1EA',
+                            sky: '#7FB3D5',
+                            skySoft: '#EBF5FB',
+                            terracotta: '#E07A5F',
+                            terracottaSoft: '#FDF0ED',
+                            darkText: '#2D3748',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        body: ['Quicksand', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #F4F1EA;
+            color: #2D3748;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        h1, h2, h3, h4, button {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .shadow-custom {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .shadow-custom-hover {
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        img {
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-yellow selection:text-brand-darkText">
+
+    <header class="bg-white border-b-4 border-brand-sage/30 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <button onclick="showHome()" class="flex items-center gap-3 text-left focus:outline-none group">
+                <div class="w-12 h-12 bg-brand-sageSoft text-brand-sage rounded-2xl flex items-center justify-center text-2xl group-hover:bg-brand-sage group-hover:text-white transition-colors">
+                    🏨
+                </div>
+                <div>
+                    <span class="block text-xl md:text-2xl font-bold text-brand-darkText leading-none">Hoteles de insectos</span>
+                    <span class="text-xs md:text-sm font-semibold text-gray-500">Pequeños refugios para grandes aliados</span>
+                </div>
+            </button>
+            <button id="navHomeBtn" onclick="showHome()" class="hidden bg-brand-sage hover:bg-brand-sage/90 text-white font-bold py-2.5 px-5 rounded-2xl transition-all duration-200 flex items-center gap-2 shadow-sm text-base">
+                <span>🏠</span> Inicio
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-6 md:py-10 flex-grow w-full">
+
+        <section id="homeView" class="space-y-12">
+            <!-- Hero banner -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-custom border-2 border-brand-sage/20 space-y-6">
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    <div class="md:w-3/5 space-y-4 text-center md:text-left">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-darkText leading-tight">
+                            Hoteles de insectos
+                        </h1>
+                        <h2 class="text-xl md:text-2xl font-bold text-brand-terracotta">
+                            Pequeños refugios para grandes aliados
+                        </h2>
+                        <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                            En las ciudades, muchos insectos encuentran cada vez menos lugares donde refugiarse, alimentarse o reproducirse. Los hoteles de insectos son estructuras que ofrecen pequeños espacios protegidos donde distintas especies pueden descansar, esconderse o construir sus nidos.
+                        </p>
+                        <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                            No todos los insectos necesitan el mismo tipo de refugio. Algunos buscan agujeros en madera, otros tallos huecos, cortezas, hojas secas o espacios oscuros y húmedos. Por eso, un buen hotel de insectos puede tener diferentes “habitaciones”.
+                        </p>
+                        <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                            Además de brindar refugio, estos hoteles nos ayudan a conocer mejor a los insectos que viven cerca de nosotros y a comprender por qué son importantes para la biodiversidad.
+                        </p>
+                    </div>
+                    <div class="md:w-2/5 w-full flex justify-center">
+                        <div class="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-md border-4 border-white transform rotate-1">
+                            <img src="imagenes/hotel-de-insectos.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&q=80&w=800';" alt="Hotel de insectos en un jardín" class="w-full h-64 md:h-80 object-cover">
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-white text-center text-sm font-semibold">
+                                Refugios naturales para la biodiversidad urbana 🌿
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 Hotel Info Buttons -->
+                <div class="pt-4 border-t-2 border-gray-100">
+                    <h3 class="text-xl md:text-2xl font-bold text-brand-darkText mb-4 text-center md:text-left">
+                        💡 Descubrí más sobre los hoteles de insectos:
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button onclick="openHotelInfoModal('queEs')" class="bg-brand-sageSoft hover:bg-brand-sage/20 border-2 border-brand-sage/40 rounded-2xl p-5 text-left transition-all transform hover:-translate-y-1 shadow-sm flex flex-col justify-between space-y-3 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl p-2 bg-white rounded-xl shadow-sm">🛖</span>
+                                <span class="text-sm font-bold text-brand-sage group-hover:translate-x-1 transition-transform">Ver más ➡️</span>
+                            </div>
+                            <span class="text-xl font-bold text-brand-darkText">¿Qué es un hotel de insectos?</span>
+                        </button>
+
+                        <button onclick="openHotelInfoModal('comoSeConstruye')" class="bg-brand-yellowSoft hover:bg-brand-yellow/20 border-2 border-brand-yellow/50 rounded-2xl p-5 text-left transition-all transform hover:-translate-y-1 shadow-sm flex flex-col justify-between space-y-3 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl p-2 bg-white rounded-xl shadow-sm">🛠️</span>
+                                <span class="text-sm font-bold text-amber-700 group-hover:translate-x-1 transition-transform">Ver más ➡️</span>
+                            </div>
+                            <span class="text-xl font-bold text-brand-darkText">¿Cómo se construye?</span>
+                        </button>
+
+                        <button onclick="openHotelInfoModal('dondeColocarlo')" class="bg-brand-skySoft hover:bg-brand-sky/20 border-2 border-brand-sky/40 rounded-2xl p-5 text-left transition-all transform hover:-translate-y-1 shadow-sm flex flex-col justify-between space-y-3 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl p-2 bg-white rounded-xl shadow-sm">📍</span>
+                                <span class="text-sm font-bold text-brand-sky group-hover:translate-x-1 transition-transform">Ver más ➡️</span>
+                            </div>
+                            <span class="text-xl font-bold text-brand-darkText">¿Dónde conviene colocarlo?</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-custom border-2 border-brand-sage/20 space-y-8">
+                <div class="text-center max-w-3xl mx-auto space-y-2">
+                    <span class="inline-block bg-brand-yellowSoft text-amber-800 text-sm md:text-base font-bold px-4 py-1.5 rounded-full border border-brand-yellow/40">
+                        🌍 Biodiversidad y Naturaleza
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-darkText">
+                        ¿Por qué son importantes los insectos?
+                    </h2>
+                    <p class="text-gray-600 text-base md:text-lg font-medium">
+                        Aunque son pequeños, realizan trabajos gigantescos para el equilibrio de nuestro planeta.
+                    </p>
+                </div>
+
+                <!-- 4 Visual Blocks -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Block 1: Polinizadores -->
+                    <div class="bg-brand-yellowSoft rounded-2xl p-6 border-2 border-brand-yellow/50 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span class="text-4xl p-3 bg-white rounded-2xl shadow-sm">🌸</span>
+                                <h3 class="text-2xl font-bold text-brand-darkText">1. Polinizadores</h3>
+                            </div>
+                            <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                Muchos insectos ayudan a transportar el polen de una flor a otra. Gracias a ese trabajo, muchas plantas pueden reproducirse y formar frutos y semillas.
+                            </p>
+                            <p class="text-gray-600 text-sm md:text-base font-semibold">
+                                🐝 Ejemplos: las abejas, los mangangás, las mariposas y otros insectos participan en la polinización.
+                            </p>
+                        </div>
+                        <div class="bg-white/90 p-4 rounded-xl border border-brand-yellow/60 text-amber-900 font-bold text-base flex items-center gap-2">
+                            <span>✨</span>
+                            <span>Sin polinizadores, muchas plantas tendrían más dificultades para reproducirse.</span>
+                        </div>
+                    </div>
+
+                    <!-- Block 2: Degradadores de materia orgánica -->
+                    <div class="bg-brand-sageSoft rounded-2xl p-6 border-2 border-brand-sage/40 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span class="text-4xl p-3 bg-white rounded-2xl shadow-sm">🍂</span>
+                                <h3 class="text-2xl font-bold text-brand-darkText">2. Degradadores de materia orgánica</h3>
+                            </div>
+                            <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                Algunos insectos ayudan a descomponer restos de plantas, animales y otros materiales orgánicos. De esa manera, los nutrientes vuelven al suelo y pueden ser utilizados nuevamente por las plantas.
+                            </p>
+                            <p class="text-gray-600 text-sm md:text-base font-semibold">
+                                🪲 Ejemplos: escarabajos, tijeretas y larvas ayudan a limpiar la tierra.
+                            </p>
+                        </div>
+                        <div class="bg-white/90 p-4 rounded-xl border border-brand-sage/50 text-brand-sage font-bold text-base flex items-center gap-2">
+                            <span>♻️</span>
+                            <span>Ayudan a reciclar la materia en la naturaleza.</span>
+                        </div>
+                    </div>
+
+                    <!-- Block 3: Controladores biológicos -->
+                    <div class="bg-brand-terracottaSoft rounded-2xl p-6 border-2 border-brand-terracotta/40 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span class="text-4xl p-3 bg-white rounded-2xl shadow-sm">🛡️</span>
+                                <h3 class="text-2xl font-bold text-brand-darkText">3. Controladores biológicos</h3>
+                            </div>
+                            <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                Algunos insectos se alimentan de otros organismos que pueden dañar las plantas. Por ejemplo, las mariquitas y las larvas de crisopa comen pulgones.
+                            </p>
+                            <p class="text-gray-600 text-sm md:text-base font-semibold">
+                                🌱 Esto ayuda a mantener el equilibrio del ambiente y puede reducir la cantidad de algunas plagas.
+                            </p>
+                        </div>
+                        <div class="bg-white/90 p-4 rounded-xl border border-brand-terracotta/50 text-brand-terracotta font-bold text-base flex items-center gap-2">
+                            <span>🐞</span>
+                            <span>Algunos insectos ayudan a controlar naturalmente a otros.</span>
+                        </div>
+                    </div>
+
+                    <!-- Block 4: Parte de la cadena alimentaria -->
+                    <div class="bg-brand-skySoft rounded-2xl p-6 border-2 border-brand-sky/40 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span class="text-4xl p-3 bg-white rounded-2xl shadow-sm">🕸️</span>
+                                <h3 class="text-2xl font-bold text-brand-darkText">4. Parte de la cadena alimentaria</h3>
+                            </div>
+                            <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                                Los insectos también son alimento para muchos otros animales. Aves, reptiles, anfibios, arañas y otros animales dependen de ellos para alimentarse.
+                            </p>
+                            <p class="text-gray-600 text-sm md:text-base font-semibold">
+                                🐦 Por eso, los insectos ocupan un lugar muy importante dentro de las cadenas alimentarias.
+                            </p>
+                        </div>
+                        <div class="bg-white/90 p-4 rounded-xl border border-brand-sky/50 text-brand-sky font-bold text-base flex items-center gap-2">
+                            <span>🐦</span>
+                            <span>Si faltan insectos, también pueden verse afectados otros animales.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plantas e insectos: una relación muy importante -->
+                <div class="bg-brand-beige/80 rounded-2xl p-6 border-2 border-brand-sage/30 space-y-4">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-darkText flex items-center gap-3">
+                        <span>🌿</span> Plantas e insectos: una relación muy importante
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-1">
+                            <span class="text-2xl">🏡</span>
+                            <p class="text-sm md:text-base font-bold text-brand-darkText">Alimento y refugio</p>
+                            <p class="text-xs md:text-sm text-gray-600 font-medium">Las plantas ofrecen comida y hogar a muchos insectos.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-1">
+                            <span class="text-2xl">🌻</span>
+                            <p class="text-sm md:text-base font-bold text-brand-darkText">Polinización</p>
+                            <p class="text-xs md:text-sm text-gray-600 font-medium">Los insectos ayudan a las plantas a formar flores y frutos.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-1">
+                            <span class="text-2xl">🐞</span>
+                            <p class="text-sm md:text-base font-bold text-brand-darkText">Protección natural</p>
+                            <p class="text-xs md:text-sm text-gray-600 font-medium">Algunas especies cuidan a las plantas comiéndose las plagas.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-1">
+                            <span class="text-2xl">🌱</span>
+                            <p class="text-sm md:text-base font-bold text-brand-darkText">Variedad y vida</p>
+                            <p class="text-xs md:text-sm text-gray-600 font-medium">Tener muchas flores favorece la presencia de más insectos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section final: Todo está conectado -->
+                <div class="bg-brand-sage text-white rounded-2xl p-6 text-center space-y-2 shadow-sm">
+                    <h3 class="text-2xl font-bold flex items-center justify-center gap-2">
+                        <span>🌐</span> Todo está conectado
+                    </h3>
+                    <p class="text-base md:text-lg font-medium max-w-3xl mx-auto">
+                        Los insectos no viven aislados. Se relacionan con las plantas, el suelo y otros animales. Por eso, cuidar a los insectos también ayuda a cuidar los ecosistemas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white/80 backdrop-blur rounded-2xl p-5 border border-brand-sage/20 shadow-sm space-y-2">
+                    <h2 class="text-2xl md:text-3xl font-bold text-brand-darkText flex items-center gap-3">
+                        <span class="bg-brand-terracottaSoft p-2 rounded-xl text-brand-terracotta">🐞</span> Algunos insectos que podemos encontrar cerca de un hotel
+                    </h2>
+                    <p class="text-gray-700 text-base md:text-lg font-medium leading-relaxed">
+                        No todos estos insectos utilizan el hotel de la misma forma. Algunos pueden usar sus cavidades como refugio o lugar de nidificación y otros pueden acercarse porque encuentran alimento, flores o vegetación alrededor.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="insectsGrid">
+                    <!-- Dynamic rendering via JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="insectDetailView" class="hidden space-y-8">
+            <!-- Top Controls -->
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <button onclick="showHome()" class="bg-white hover:bg-gray-100 text-brand-darkText font-bold py-3 px-6 rounded-2xl border-2 border-gray-200 transition-all flex items-center gap-2 shadow-sm text-lg cursor-pointer">
+                    <span>⬅️</span> Volver al inicio
+                </button>
+            </div>
+
+            <!-- Insect Header Card -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-custom border-2 border-brand-sage/20 space-y-6">
+                <div class="flex flex-col lg:flex-row gap-6 items-center">
+                    <!-- Photos layout -->
+                    <div class="w-full lg:w-1/2 space-y-3">
+                        <div class="relative rounded-2xl overflow-hidden border-4 border-brand-beige shadow-sm h-64 md:h-80">
+                            <img id="detailMainImg" src="" alt="Foto del insecto" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Title & Instructions -->
+                    <div class="w-full lg:w-1/2 space-y-4">
+                        <div class="inline-block bg-brand-sageSoft text-brand-sage text-sm md:text-base font-bold px-4 py-1.5 rounded-full">
+                            Ficha de investigación
+                        </div>
+                        <h1 id="detailTitle" class="text-4xl md:text-5xl font-bold text-brand-darkText">
+                            <!-- Name -->
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-600 font-semibold italic">
+                            Elegí una pregunta para abrir la información:
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6 Big Research Question Buttons Grid -->
+                <div class="pt-4 border-t-2 border-gray-100">
+                    <h3 class="text-xl md:text-2xl font-bold text-center text-brand-darkText mb-6">
+                        ¿Qué querés investigar?
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="questionsGrid">
+                        <!-- 6 Question Buttons populated via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="infoModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border-4 border-brand-sage transform transition-all duration-300 scale-95 opacity-0" id="modalCard">
+            <!-- Modal Header -->
+            <div class="bg-brand-sageSoft px-6 py-5 border-b border-brand-sage/20 flex items-center justify-between sticky top-0 z-10">
+                <div class="flex items-center gap-3">
+                    <span id="modalCategoryIcon" class="text-3xl p-2 bg-white rounded-2xl shadow-sm">🔍</span>
+                    <div>
+                        <span id="modalInsectName" class="text-xs font-bold text-brand-sage uppercase tracking-wider block">Información</span>
+                        <h3 id="modalCategoryTitle" class="text-2xl md:text-3xl font-bold text-brand-darkText">Categoría</h3>
+                    </div>
+                </div>
+                <button onclick="closeModal()" class="w-10 h-10 rounded-full bg-white hover:bg-gray-200 text-gray-700 font-bold text-xl flex items-center justify-center transition-colors">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 md:p-8 space-y-6">
+                <!-- Text Content -->
+                <div class="bg-brand-beige/50 rounded-2xl p-5 border border-brand-beige" id="modalBodyContainer">
+                    <p id="modalText" class="text-lg md:text-xl text-brand-darkText leading-relaxed font-medium whitespace-pre-line">
+                        <!-- Content -->
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Footer / Big Close Button -->
+            <div class="p-6 bg-gray-50 border-t border-gray-100 flex justify-center sticky bottom-0">
+                <button onclick="closeModal()" class="w-full sm:w-auto bg-brand-terracotta hover:bg-brand-terracotta/90 text-white font-bold text-xl py-4 px-10 rounded-2xl shadow-md transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                    <span>✅</span> Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t-2 border-gray-200 mt-12 py-6 text-center text-gray-600 text-sm">
+        <div class="max-w-6xl mx-auto px-4 space-y-2">
+            <p class="font-bold text-base text-brand-darkText">Hoteles de insectos • Guía interactiva</p>
+            <p>Estructuras y biodiversidad en nuestros espacios verdes.</p>
+        </div>
+    </footer>
+
+    <script>
+        // INSECT DATA with requested order
+        const insectsData = [
+            {
+                id: 'escarabajo',
+                name: 'Escarabajo',
+                color: 'terracotta',
+                mainImg: 'imagenes/escarabajo.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '🪲',
+                        text: 'Los escarabajos tienen seis patas, dos antenas y un cuerpo generalmente duro. Sus alas delanteras forman una cubierta resistente que protege las alas que usan para volar.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🪵',
+                        text: 'Hay escarabajos en muchos ambientes: jardines, parques, debajo de troncos, cortezas, piedras, hojas secas y madera en descomposición.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🌿',
+                        text: 'Depende mucho de la especie. Algunos comen plantas, otros hongos, madera en descomposición o pequeños animales.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '♻️',
+                        text: 'Muchos ayudan a descomponer materia orgánica y a reciclar nutrientes. Otros se alimentan de organismos que pueden dañar las plantas.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🛖',
+                        text: 'Puede aprovechar cortezas, troncos, pequeñas cavidades, hojas secas y madera. Los hoteles de insectos con materiales variados pueden ofrecer refugios a distintos escarabajos o sus larvas.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '🌍',
+                        text: 'Los escarabajos forman uno de los grupos de insectos con mayor cantidad de especies del planeta.'
+                    }
+                }
+            },
+            {
+                id: 'abeja-solitaria',
+                name: 'Abeja solitaria',
+                color: 'yellow',
+                mainImg: 'imagenes/abeja-solitaria.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '🐝',
+                        text: 'Tiene seis patas, dos antenas y dos pares de alas. Su cuerpo suele tener pelos que ayudan a transportar polen. Muchas son más pequeñas y discretas que la abeja de la miel.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🏠',
+                        text: 'Las abejas solitarias no viven en grandes colonias. Cada hembra construye y abastece su propio nido. Según la especie, puede hacerlo en agujeros de madera, tallos huecos, pequeñas cavidades o en el suelo.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🌻',
+                        text: 'Los adultos se alimentan de néctar y polen. Las hembras también juntan polen para dejar alimento a sus crías dentro del nido.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '⭐',
+                        text: 'Son polinizadoras muy importantes. Al visitar flores, transportan polen de una a otra y ayudan a que muchas plantas formen frutos y semillas.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🪵',
+                        text: 'Necesita cavidades pequeñas y protegidas, como tallos huecos, agujeros en madera o sitios adecuados en el suelo, según la especie. También necesita flores cercanas para encontrar alimento. Para un hotel de insectos, son útiles los tubos o agujeros de distintos diámetros, protegidos de la lluvia.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '💡',
+                        text: 'Aunque se llamen “solitarias”, muchas pueden hacer sus nidos cerca unas de otras. No forman una colmena con reina y obreras como las abejas melíferas.'
+                    }
+                }
+            },
+            {
+                id: 'polilla',
+                name: 'Polilla',
+                color: 'sky',
+                mainImg: 'imagenes/polilla.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '🦋',
+                        text: 'Tiene seis patas, dos antenas y cuatro alas cubiertas de pequeñas escamas, igual que las mariposas. Muchas tienen colores marrones, grises o beige que les ayudan a camuflarse.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🌙',
+                        text: 'Puede encontrarse en jardines, parques, montes y zonas con vegetación. Muchas especies están activas principalmente durante la noche.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🍃',
+                        text: 'Cuando son orugas, suelen comer hojas u otras partes de plantas. Las polillas adultas de muchas especies se alimentan de néctar, aunque no todas comen cuando son adultas.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '⭐',
+                        text: 'Algunas polillas participan en la polinización nocturna. También forman parte de las cadenas alimentarias y sirven de alimento para aves, murciélagos y otros animales.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🍂',
+                        text: 'Necesita vegetación y lugares tranquilos y protegidos donde esconderse durante el día. Rincones entre cortezas, hojas, madera y otros materiales naturales pueden ofrecer refugio. También es importante evitar iluminación artificial excesiva cerca de sus zonas de actividad nocturna.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '✨',
+                        text: 'Muchas polillas son nocturnas y algunas flores que se abren o perfuman más de noche dependen de insectos nocturnos para ser polinizadas.'
+                    }
+                }
+            },
+            {
+                id: 'mariquita',
+                name: 'Mariquita',
+                color: 'terracotta',
+                mainImg: 'imagenes/mariquita.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '🐞',
+                        text: 'Es un escarabajo pequeño, generalmente de cuerpo redondeado. Muchas especies tienen alas delanteras duras y de colores llamativos, como rojo, naranja o amarillo, con manchas negras. Debajo de esas cubiertas se encuentran las alas que utilizan para volar.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🌱',
+                        text: 'Suele encontrarse sobre plantas, especialmente en jardines, huertas y zonas donde haya pequeños insectos de los que pueda alimentarse.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🔍',
+                        text: 'Muchas mariquitas son depredadoras y se alimentan de pulgones y otros pequeños insectos.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '🛡️',
+                        text: 'Como muchas especies comen pulgones y otros organismos que se alimentan de plantas, ayudan al control natural de algunas plagas.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🍂',
+                        text: 'Busca lugares protegidos, sobre todo cuando baja la temperatura. Puede refugiarse entre hojas secas, pequeñas cavidades, cortezas y otros espacios resguardados. Necesita rincones secos y protegidos de la lluvia.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '❄️',
+                        text: 'Algunas mariquitas pasan los meses más fríos prácticamente inactivas, escondidas en refugios hasta que las condiciones vuelven a ser favorables.'
+                    }
+                }
+            },
+            {
+                id: 'avispa-solitaria',
+                name: 'Avispa solitaria',
+                color: 'yellow',
+                mainImg: 'imagenes/avispa-solitaria.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '🐝',
+                        text: 'Tiene seis patas, dos antenas y alas. Muchas tienen un cuerpo alargado y una “cintura” estrecha. A diferencia de las avispas sociales, no viven en grandes colonias.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🏡',
+                        text: 'Puede encontrarse en jardines, parques y otros lugares con vegetación. Según la especie, construye nidos en el suelo, tallos, pequeños huecos o cavidades.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🌸',
+                        text: 'Los adultos suelen alimentarse de néctar. Muchas especies cazan pequeños insectos o arañas para alimentar a sus crías.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '🛡️',
+                        text: 'Ayuda a controlar poblaciones de otros pequeños animales y algunas también colaboran con la polinización al visitar flores.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🪵',
+                        text: 'Necesita pequeños huecos, tubos o cavidades protegidas. Algunas especies pueden utilizar estructuras parecidas a las de un hotel de insectos.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '🏠',
+                        text: 'Cada hembra suele preparar su propio nido y dejar alimento para sus crías antes de cerrarlo.'
+                    }
+                }
+            },
+            {
+                id: 'mariposa',
+                name: 'Mariposa',
+                color: 'sky',
+                mainImg: 'imagenes/mariposa.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '🦋',
+                        text: 'Tiene seis patas, dos antenas y cuatro alas cubiertas por diminutas escamas. Esas escamas producen gran parte de los colores y dibujos que vemos en sus alas. Posee una trompa larga llamada espiritrompa, que puede enrollar cuando no la utiliza.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🌿',
+                        text: 'Se encuentra en ambientes donde existen plantas adecuadas: jardines, parques, praderas, montes y otros espacios con vegetación. Las distintas especies necesitan determinadas plantas para completar su ciclo de vida.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🍃',
+                        text: 'Cuando es oruga, suele alimentarse de hojas de determinadas plantas llamadas plantas hospederas. Cuando es mariposa adulta, muchas especies se alimentan del néctar de las flores.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '⭐',
+                        text: 'Al visitar distintas flores para alimentarse, las mariposas pueden transportar polen y colaborar con la polinización. Además, forman parte de las cadenas alimentarias y sirven de alimento para otros animales.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🍃',
+                        text: 'Necesita vegetación, flores que aporten néctar y plantas hospederas donde pueda poner sus huevos y alimentar a las futuras orugas. También necesita lugares protegidos del viento y la lluvia.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '✨',
+                        text: 'La mariposa no nace directamente con alas. Pasa por cuatro etapas: huevo, oruga, crisálida y mariposa adulta.'
+                    }
+                }
+            },
+            {
+                id: 'tijereta',
+                name: 'Tijereta',
+                color: 'sage',
+                mainImg: 'imagenes/tijereta.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '✂️',
+                        text: 'Tiene un cuerpo alargado, seis patas y dos antenas. En la parte final del abdomen posee dos estructuras parecidas a una pinza, llamadas cercos. No son un aguijón.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🌙',
+                        text: 'Prefiere lugares oscuros, protegidos y con cierta humedad. Durante el día suele esconderse debajo de hojas, cortezas, piedras, macetas u otros objetos. Generalmente está más activa durante la noche.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🍂',
+                        text: 'Es omnívora. Puede alimentarse de materia vegetal en descomposición, hongos, plantas y pequeños animales. Algunas también comen pulgones, ácaros, huevos o larvas de otros insectos.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '♻️',
+                        text: 'Puede colaborar con la descomposición de materia orgánica y también alimentarse de algunos pequeños organismos que dañan plantas.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🧱',
+                        text: 'Necesita un espacio oscuro y protegido, con pequeñas cavidades y algo de humedad. Materiales como corteza, pequeños trozos de madera o tubos pueden ofrecer escondites similares a los que encuentra en la naturaleza.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '❤️',
+                        text: 'Las tijeretas tienen un comportamiento poco común entre los insectos: las madres cuidan sus huevos y a las crías recién nacidas.'
+                    }
+                }
+            },
+            {
+                id: 'manganga',
+                name: 'Mangangá',
+                color: 'yellow',
+                mainImg: 'imagenes/manganga.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '🐝',
+                        text: 'Es parecido a una abeja, pero generalmente es más grande, robusto y muy peludo. Tiene seis patas, dos antenas y alas. Su cuerpo cubierto de pelos ayuda a que el polen se adhiera mientras visita las flores.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🏞️',
+                        text: 'Puede encontrarse en campos, jardines, praderas y otros lugares con abundantes flores. Los mangangás del género Bombus forman colonias y construyen sus nidos en sitios protegidos.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🌸',
+                        text: 'Los adultos se alimentan de néctar y polen.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '⭐',
+                        text: 'Es un excelente polinizador. Ayuda a la reproducción de muchas plantas y cumple un papel importante tanto en ecosistemas naturales como en algunos cultivos.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🌧️',
+                        text: 'Necesita un sitio protegido, con poca perturbación y cercano a plantas con flores. El refugio debe estar resguardado de la lluvia y de cambios muy bruscos de temperatura.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '🔊',
+                        text: 'Algunos mangangás pueden hacer vibrar con mucha fuerza los músculos que utilizan para volar. Esa vibración ayuda a liberar el polen de algunas flores.'
+                    }
+                }
+            },
+            {
+                id: 'sirfido',
+                name: 'Sírfido',
+                color: 'yellow',
+                mainImg: 'imagenes/sirfido.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '🪰',
+                        text: 'Es una mosca que muchas veces se parece a una abeja o una avispa. Puede tener rayas amarillas y negras, pero posee solo un par de alas.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🌻',
+                        text: 'Suele encontrarse en jardines, parques, huertas y otros lugares con flores.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🍯',
+                        text: 'Los adultos se alimentan principalmente de néctar y polen. Las larvas de algunas especies comen pulgones.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '⭐',
+                        text: 'Los adultos colaboran con la polinización. Además, algunas larvas ayudan a controlar pulgones y otros pequeños organismos que pueden dañar las plantas.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🌿',
+                        text: 'Necesita ambientes con flores, vegetación y lugares protegidos. No todas las especies utilizan hoteles de insectos, pero se benefician de espacios verdes con refugios y alimento.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '🔍',
+                        text: 'Aunque muchas veces parece una abeja o una avispa, es una mosca. Una pista para distinguirla es que tiene solo dos alas.'
+                    }
+                }
+            },
+            {
+                id: 'crisopa',
+                name: 'Crisopa',
+                color: 'sage',
+                mainImg: 'imagenes/crisopa.jpeg',
+                categories: {
+                    comoEs: {
+                        title: '¿Cómo es?',
+                        icon: '🪰',
+                        text: 'La crisopa adulta suele tener un cuerpo delicado, ojos grandes y alas transparentes atravesadas por muchas venas, como si fueran una pequeña red. Muchas especies son verdes o marrones.'
+                    },
+                    dondeVive: {
+                        title: '¿Dónde vive?',
+                        icon: '🏡',
+                        text: 'Se la encuentra sobre plantas, en jardines, huertas y otros lugares donde pueda encontrar alimento y pequeños insectos.'
+                    },
+                    queCome: {
+                        title: '¿Qué come?',
+                        icon: '🍃',
+                        text: 'Las larvas de muchas crisopas son grandes depredadoras de pulgones, ácaros, huevos de insectos y otros pequeños animales. Los adultos de distintas especies pueden consumir néctar, polen u otros alimentos.'
+                    },
+                    porQueEsImportante: {
+                        title: '¿Por qué es importante?',
+                        icon: '🌱',
+                        text: 'Las larvas ayudan a controlar naturalmente poblaciones de pulgones y otros organismos que pueden dañar las plantas. Por eso las crisopas son consideradas insectos beneficiosos para jardines y cultivos.'
+                    },
+                    queNecesitaRefugio: {
+                        title: '¿Qué necesita para refugiarse?',
+                        icon: '🪵',
+                        text: 'Necesita vegetación y lugares protegidos donde descansar y pasar períodos de bajas temperaturas. Un refugio con pequeñas cavidades o materiales secos puede ofrecer protección.'
+                    },
+                    datoCurioso: {
+                        title: 'Dato curioso',
+                        icon: '🥚',
+                        text: 'La hembra de muchas crisopas coloca cada huevo en la punta de un filamento muy fino, como si el huevo estuviera sostenido por un pequeño tallo.'
+                    }
+                }
+            }
+        ];
+
+        let currentInsect = null;
+
+        function showHome() {
+            document.getElementById('insectDetailView').classList.add('hidden');
+            document.getElementById('homeView').classList.remove('hidden');
+            document.getElementById('navHomeBtn').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function getFallbackImage(text) {
+            return `https://placehold.co/800x600/89A894/FFFFFF?text=${encodeURIComponent(text)}`;
+        }
+
+        function renderHomeGrid() {
+            const grid = document.getElementById('insectsGrid');
+            grid.innerHTML = insectsData.map(insect => `
+                <div onclick="openInsectDetail('${insect.id}')" 
+                     class="bg-white rounded-3xl overflow-hidden shadow-custom hover:shadow-custom-hover transition-all duration-300 border-2 border-gray-100 cursor-pointer transform hover:-translate-y-1 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-brand-sageSoft">
+                            <img src="${insect.mainImg}" onerror="this.onerror=null; this.src='${getFallbackImage(insect.name)}';" alt="${insect.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-white text-2xl font-bold font-heading drop-shadow">
+                                ${insect.name}
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-gray-600 font-medium text-base">
+                                🔬 Descubrí su hábitat, alimentación y su relación con el hotel.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2">
+                        <button class="w-full bg-brand-sage group-hover:bg-brand-sage/90 text-white font-bold py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 text-lg shadow-sm transition-colors">
+                            <span>🔍</span> Conocer más
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openInsectDetail(id) {
+            currentInsect = insectsData.find(i => i.id === id);
+            if (!currentInsect) return;
+
+            document.getElementById('detailTitle').textContent = currentInsect.name;
+            const mainImgEl = document.getElementById('detailMainImg');
+            mainImgEl.src = currentInsect.mainImg;
+            mainImgEl.onerror = function() {
+                this.onerror = null;
+                this.src = getFallbackImage(currentInsect.name);
+            };
+
+            const questions = [
+                { key: 'comoEs', title: '¿Cómo es?', icon: '🔍', color: 'bg-brand-yellowSoft border-brand-yellow/50 text-brand-darkText' },
+                { key: 'dondeVive', title: '¿Dónde vive?', icon: '🏡', color: 'bg-brand-skySoft border-brand-sky/50 text-brand-darkText' },
+                { key: 'queCome', title: '¿Qué come?', icon: '🍎', color: 'bg-brand-sageSoft border-brand-sage/50 text-brand-darkText' },
+                { key: 'porQueEsImportante', title: '¿Por qué es importante?', icon: '⭐', color: 'bg-brand-terracottaSoft border-brand-terracotta/50 text-brand-darkText' },
+                { key: 'queNecesitaRefugio', title: '¿Qué necesita para refugiarse?', icon: '🛖', color: 'bg-brand-yellowSoft border-brand-yellow/50 text-brand-darkText' },
+                { key: 'datoCurioso', title: 'Dato curioso', icon: '💡', color: 'bg-brand-skySoft border-brand-sky/50 text-brand-darkText' }
+            ];
+
+            const grid = document.getElementById('questionsGrid');
+            grid.innerHTML = questions.map(q => {
+                const catData = currentInsect.categories[q.key];
+                return `
+                    <button onclick="openModal('${q.key}')" 
+                            class="${q.color} border-2 rounded-2xl p-5 hover:shadow-lg transition-all transform hover:-translate-y-1 active:translate-y-0 text-left flex flex-col justify-between space-y-3 min-h-[110px] group cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <span class="text-3xl p-2 bg-white rounded-xl shadow-sm">${catData.icon || q.icon}</span>
+                            <span class="text-sm font-bold text-gray-500 group-hover:translate-x-1 transition-transform">Tocar ➡️</span>
+                        </div>
+                        <span class="text-xl font-bold leading-tight">${catData.title}</span>
+                    </button>
+                `;
+            }).join('');
+
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('insectDetailView').classList.remove('hidden');
+            document.getElementById('navHomeBtn').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function openHotelInfoModal(type) {
+            if (type === 'queEs') {
+                document.getElementById('modalInsectName').textContent = 'Hotel de insectos';
+                document.getElementById('modalCategoryTitle').textContent = '¿Qué es un hotel de insectos?';
+                document.getElementById('modalCategoryIcon').textContent = '🛖';
+                document.getElementById('modalText').innerHTML = `Es una estructura con diferentes cavidades y materiales que ofrece pequeños refugios a distintos insectos. Puede servir como lugar de descanso, protección o nidificación, según la especie.`;
+            } else if (type === 'comoSeConstruye') {
+                document.getElementById('modalInsectName').textContent = 'Construcción';
+                document.getElementById('modalCategoryTitle').textContent = '¿Cómo se construye?';
+                document.getElementById('modalCategoryIcon').textContent = '🛠️';
+
+                document.getElementById('modalText').innerHTML = `Para construirlo se pueden utilizar diversos materiales naturales:\n\n• Cañas o tallos huecos\n• Trozos de madera con agujeros\n• Cortezas\n• Ramitas\n• Hojas secas\n• Pequeños tubos\n• Cajas o marcos de madera\n\n<strong>Lo importante es ofrecer refugios de distintos tamaños y mantener los materiales firmes y protegidos de la lluvia.</strong>`;
+            } else if (type === 'dondeColocarlo') {
+                document.getElementById('modalInsectName').textContent = 'Ubicación y cuidado';
+                document.getElementById('modalCategoryTitle').textContent = '¿Dónde conviene colocarlo?';
+                document.getElementById('modalCategoryIcon').textContent = '📍';
+
+                document.getElementById('modalText').innerHTML = `Conviene ubicarlo en un sitio estable y protegido de la lluvia y del viento. Es mejor si está cerca de plantas, flores y otros lugares donde los insectos puedan encontrar alimento.\n\n<div class="mt-4 pt-4 border-t border-brand-sage/30"><strong class="text-brand-terracotta text-xl">Un hotel no funciona solo:</strong><br>Los insectos también necesitan alimento, vegetación, agua y un ambiente cuidado. Por eso, además del hotel, es importante conservar plantas, flores y pequeños espacios naturales.</div>`;
+            }
+
+            showModalElement();
+        }
+
+        function openModal(categoryKey) {
+            if (!currentInsect) return;
+
+            const categoryData = currentInsect.categories[categoryKey];
+            if (!categoryData) return;
+
+            document.getElementById('modalInsectName').textContent = currentInsect.name;
+            document.getElementById('modalCategoryTitle').textContent = categoryData.title;
+            document.getElementById('modalCategoryIcon').textContent = categoryData.icon || '🔍';
+            document.getElementById('modalText').textContent = categoryData.text;
+
+            showModalElement();
+        }
+
+        function showModalElement() {
+            const modal = document.getElementById('infoModal');
+            const card = document.getElementById('modalCard');
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('infoModal');
+            const card = document.getElementById('modalCard');
+
+            card.classList.remove('scale-100', 'opacity-100');
+            card.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Initialize Home Grid
+        renderHomeGrid();
+    </script>
+</body>
+</html>
