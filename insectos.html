@@ -118,18 +118,26 @@
                     </div>
                 </div>
 
-                <!-- 3 Hotel Info Buttons -->
+                <!-- 4 Hotel Info Buttons -->
                 <div class="pt-4 border-t-2 border-gray-100">
                     <h3 class="text-xl md:text-2xl font-bold text-brand-darkText mb-4 text-center md:text-left">
                         💡 Descubrí más sobre los hoteles de insectos:
                     </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         <button onclick="openHotelInfoModal('queEs')" class="bg-brand-sageSoft hover:bg-brand-sage/20 border-2 border-brand-sage/40 rounded-2xl p-5 text-left transition-all transform hover:-translate-y-1 shadow-sm flex flex-col justify-between space-y-3 group">
                             <div class="flex items-center justify-between">
                                 <span class="text-3xl p-2 bg-white rounded-xl shadow-sm">🛖</span>
                                 <span class="text-sm font-bold text-brand-sage group-hover:translate-x-1 transition-transform">Ver más ➡️</span>
                             </div>
                             <span class="text-xl font-bold text-brand-darkText">¿Qué es un hotel de insectos?</span>
+                        </button>
+
+                        <button onclick="openHotelInfoModal('porQueSonNecesarios')" class="bg-brand-terracottaSoft hover:bg-brand-terracotta/20 border-2 border-brand-terracotta/40 rounded-2xl p-5 text-left transition-all transform hover:-translate-y-1 shadow-sm flex flex-col justify-between space-y-3 group">
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl p-2 bg-white rounded-xl shadow-sm">❓</span>
+                                <span class="text-sm font-bold text-brand-terracotta group-hover:translate-x-1 transition-transform">Ver más ➡️</span>
+                            </div>
+                            <span class="text-xl font-bold text-brand-darkText">¿Por qué son necesarios?</span>
                         </button>
 
                         <button onclick="openHotelInfoModal('comoSeConstruye')" class="bg-brand-yellowSoft hover:bg-brand-yellow/20 border-2 border-brand-yellow/50 rounded-2xl p-5 text-left transition-all transform hover:-translate-y-1 shadow-sm flex flex-col justify-between space-y-3 group">
@@ -335,13 +343,13 @@
                     </div>
                 </div>
 
-                <!-- 6 Big Research Question Buttons Grid -->
+                <!-- Research Question Buttons Grid -->
                 <div class="pt-4 border-t-2 border-gray-100">
                     <h3 class="text-xl md:text-2xl font-bold text-center text-brand-darkText mb-6">
                         ¿Qué querés investigar?
                     </h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="questionsGrid">
-                        <!-- 6 Question Buttons populated via JS -->
+                        <!-- Question Buttons populated via JS -->
                     </div>
                 </div>
             </div>
@@ -463,6 +471,11 @@
                         icon: '🪵',
                         text: 'Necesita cavidades pequeñas y protegidas, como tallos huecos, agujeros en madera o sitios adecuados en el suelo, según la especie. También necesita flores cercanas para encontrar alimento. Para un hotel de insectos, son útiles los tubos o agujeros de distintos diámetros, protegidos de la lluvia.'
                     },
+                    queProblemaEnfrenta: {
+                        title: '¿Qué problema enfrenta?',
+                        icon: '🌡️',
+                        text: 'Las temperaturas muy bajas o muy altas pueden afectar el desarrollo de las crías dentro del nido. Los cambios bruscos de temperatura también pueden hacer que el refugio sea menos seguro.\n\nPor eso, un lugar protegido ayuda a mantener condiciones más estables.'
+                    },
                     datoCurioso: {
                         title: 'Dato curioso',
                         icon: '💡',
@@ -537,7 +550,12 @@
                     queNecesitaRefugio: {
                         title: '¿Qué necesita para refugiarse?',
                         icon: '🍂',
-                        text: 'Busca lugares protegidos, sobre todo cuando baja la temperatura. Puede refugiarse entre hojas secas, piñas, pequeñas cavidades, cortezas y otros espacios resguardados. Necesita rincones secos y protegidos de la lluvia.'
+                        text: 'Busca lugares protegidos, sobre todo cuando baja la temperatura. Puede refugiarse entre hojas secas, pequeñas cavidades, cortezas y otros espacios resguardados. Necesita rincones secos y protegidos de la lluvia.'
+                    },
+                    queProblemaEnfrenta: {
+                        title: '¿Qué problema enfrenta?',
+                        icon: '🌡️',
+                        text: 'La temperatura influye en su actividad y desarrollo.\n\nEn una especie de mariquita presente en nuestra región, Cycloneda sanguinea, las condiciones favorables se encuentran aproximadamente entre 20 °C y 25 °C.\n\nCuando hace demasiado frío, las mariquitas buscan lugares protegidos donde refugiarse.'
                     },
                     datoCurioso: {
                         title: 'Dato curioso',
@@ -615,6 +633,11 @@
                         icon: '🍃',
                         text: 'Necesita vegetación, flores que aporten néctar y plantas hospederas donde pueda poner sus huevos y alimentar a las futuras orugas. También necesita lugares protegidos del viento y la lluvia.'
                     },
+                    queProblemaEnfrenta: {
+                        title: '¿Qué problema enfrenta?',
+                        icon: '⚠️',
+                        text: 'Las mariposas necesitan flores para encontrar néctar y plantas adecuadas donde poner sus huevos.\n\nCuando disminuyen las flores silvestres y la vegetación, encuentran menos alimento y menos lugares donde completar su ciclo de vida.\n\nPor eso es importante conservar flores, plantas nativas y pequeños espacios con vegetación.'
+                    },
                     datoCurioso: {
                         title: 'Dato curioso',
                         icon: '✨',
@@ -653,6 +676,11 @@
                         icon: '🧱',
                         text: 'Necesita un espacio oscuro y protegido, con pequeñas cavidades y algo de humedad. Materiales como corteza, pequeños trozos de madera o tubos pueden ofrecer escondites similares a los que encuentra en la naturaleza.'
                     },
+                    queProblemaEnfrenta: {
+                        title: '¿Qué problema enfrenta?',
+                        icon: '💧',
+                        text: 'Las tijeretas prefieren lugares oscuros, protegidos y con cierta humedad.\n\nCuando el ambiente está demasiado seco, pueden tener dificultades para mantenerse en el refugio y buscan otros lugares más húmedos.\n\nPor eso es importante que encuentren espacios que conserven algo de humedad.'
+                    },
                     datoCurioso: {
                         title: 'Dato curioso',
                         icon: '❤️',
@@ -690,6 +718,11 @@
                         title: '¿Qué necesita para refugiarse?',
                         icon: '🌧️',
                         text: 'Necesita un sitio protegido, con poca perturbación y cercano a plantas con flores. El refugio debe estar resguardado de la lluvia y de cambios muy bruscos de temperatura.'
+                    },
+                    queProblemaEnfrenta: {
+                        title: '¿Qué problema enfrenta?',
+                        icon: '🌡️',
+                        text: 'Las crías del mangangá necesitan que el nido mantenga una temperatura bastante estable.\n\nEn muchas especies de mangangás, la zona donde se desarrollan las crías se mantiene aproximadamente entre 28 °C y 32 °C.\n\nEl frío intenso, las heladas o el calor excesivo pueden dificultar el desarrollo de la colonia.'
                     },
                     datoCurioso: {
                         title: 'Dato curioso',
@@ -767,6 +800,11 @@
                         icon: '🪵',
                         text: 'Necesita vegetación y lugares protegidos donde descansar y pasar períodos de bajas temperaturas. Un refugio con pequeñas cavidades o materiales secos puede ofrecer protección.'
                     },
+                    queProblemaEnfrenta: {
+                        title: '¿Qué problema enfrenta?',
+                        icon: '🌙',
+                        text: 'Las crisopas necesitan lugares protegidos y poco expuestos para descansar.\n\nMuchas son más activas al atardecer o durante la noche, por eso durante el día buscan espacios tranquilos, con sombra o poca luz, entre plantas, cortezas u otros refugios.\n\nSi no encuentran estos lugares, tienen menos espacios donde protegerse.'
+                    },
                     datoCurioso: {
                         title: 'Dato curioso',
                         icon: '🥚',
@@ -829,29 +867,32 @@
                 this.src = getFallbackImage(currentInsect.name);
             };
 
-            const questions = [
+            const allQuestionConfigs = [
                 { key: 'comoEs', title: '¿Cómo es?', icon: '🔍', color: 'bg-brand-yellowSoft border-brand-yellow/50 text-brand-darkText' },
                 { key: 'dondeVive', title: '¿Dónde vive?', icon: '🏡', color: 'bg-brand-skySoft border-brand-sky/50 text-brand-darkText' },
                 { key: 'queCome', title: '¿Qué come?', icon: '🍎', color: 'bg-brand-sageSoft border-brand-sage/50 text-brand-darkText' },
                 { key: 'porQueEsImportante', title: '¿Por qué es importante?', icon: '⭐', color: 'bg-brand-terracottaSoft border-brand-terracotta/50 text-brand-darkText' },
                 { key: 'queNecesitaRefugio', title: '¿Qué necesita para refugiarse?', icon: '🛖', color: 'bg-brand-yellowSoft border-brand-yellow/50 text-brand-darkText' },
+                { key: 'queProblemaEnfrenta', title: '¿Qué problema enfrenta?', icon: '⚠️', color: 'bg-brand-terracottaSoft border-brand-terracotta/50 text-brand-darkText' },
                 { key: 'datoCurioso', title: 'Dato curioso', icon: '💡', color: 'bg-brand-skySoft border-brand-sky/50 text-brand-darkText' }
             ];
 
             const grid = document.getElementById('questionsGrid');
-            grid.innerHTML = questions.map(q => {
-                const catData = currentInsect.categories[q.key];
-                return `
-                    <button onclick="openModal('${q.key}')" 
-                            class="${q.color} border-2 rounded-2xl p-5 hover:shadow-lg transition-all transform hover:-translate-y-1 active:translate-y-0 text-left flex flex-col justify-between space-y-3 min-h-[110px] group cursor-pointer">
-                        <div class="flex items-center justify-between">
-                            <span class="text-3xl p-2 bg-white rounded-xl shadow-sm">${catData.icon || q.icon}</span>
-                            <span class="text-sm font-bold text-gray-500 group-hover:translate-x-1 transition-transform">Tocar ➡️</span>
-                        </div>
-                        <span class="text-xl font-bold leading-tight">${catData.title}</span>
-                    </button>
-                `;
-            }).join('');
+            grid.innerHTML = allQuestionConfigs
+                .filter(q => currentInsect.categories[q.key])
+                .map(q => {
+                    const catData = currentInsect.categories[q.key];
+                    return `
+                        <button onclick="openModal('${q.key}')" 
+                                class="${q.color} border-2 rounded-2xl p-5 hover:shadow-lg transition-all transform hover:-translate-y-1 active:translate-y-0 text-left flex flex-col justify-between space-y-3 min-h-[110px] group cursor-pointer">
+                            <div class="flex items-center justify-between">
+                                <span class="text-3xl p-2 bg-white rounded-xl shadow-sm">${catData.icon || q.icon}</span>
+                                <span class="text-sm font-bold text-gray-500 group-hover:translate-x-1 transition-transform">Tocar ➡️</span>
+                            </div>
+                            <span class="text-xl font-bold leading-tight">${catData.title}</span>
+                        </button>
+                    `;
+                }).join('');
 
             document.getElementById('homeView').classList.add('hidden');
             document.getElementById('insectDetailView').classList.remove('hidden');
@@ -865,6 +906,11 @@
                 document.getElementById('modalCategoryTitle').textContent = '¿Qué es un hotel de insectos?';
                 document.getElementById('modalCategoryIcon').textContent = '🛖';
                 document.getElementById('modalText').innerHTML = `Es una estructura con diferentes cavidades y materiales que ofrece pequeños refugios a distintos insectos. Puede servir como lugar de descanso, protección o nidificación, según la especie.`;
+            } else if (type === 'porQueSonNecesarios') {
+                document.getElementById('modalInsectName').textContent = 'Importancia';
+                document.getElementById('modalCategoryTitle').textContent = '¿Por qué son necesarios?';
+                document.getElementById('modalCategoryIcon').textContent = '❓';
+                document.getElementById('modalText').innerHTML = `En las ciudades se eliminan muchas hojas secas, troncos, tallos, cortezas y pequeños rincones naturales. Eso reduce los lugares donde distintos insectos pueden esconderse, descansar o construir sus nidos. Los hoteles de insectos intentan ofrecer algunos de esos espacios nuevamente.`;
             } else if (type === 'comoSeConstruye') {
                 document.getElementById('modalInsectName').textContent = 'Construcción';
                 document.getElementById('modalCategoryTitle').textContent = '¿Cómo se construye?';
